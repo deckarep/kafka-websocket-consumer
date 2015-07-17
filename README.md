@@ -1,2 +1,2 @@
 # kafka-websocket-consumer
-Consumes from Kafka and sends writes data to an HTML websocket connection.
+Consumes from Kafka and writes data to an HTML websocket connection.
