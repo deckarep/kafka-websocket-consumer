@@ -38,7 +38,7 @@ func wsHandler(w http.ResponseWriter, r *http.Request) {
 func writer(conn *websocket.Conn) {
 	defer func() {
 		conn.Close()
-		fmt.Println("conn Closed()")
+
 	}()
 
 	count := 0
@@ -47,6 +47,7 @@ func writer(conn *websocket.Conn) {
 		msg := fmt.Sprintf("How are you doing? %d", count)
 		if err := conn.WriteMessage(websocket.TextMessage, []byte(msg)); err != nil {
 			log.Println("An error occured writing to the websocket.")
+			return
 		}
 		count++
 		time.Sleep(time.Second * 1)
